@@ -121,7 +121,7 @@ export function getCronStringFromValues(
       : []
   const newHours =
     period !== 'minute' && period !== 'hour' && hours ? hours : []
-  const newMinutes = period !== 'minute' && minutes ? minutes : []
+  const newMinutes = minutes ? minutes : []
 
   const parsedArray = parseCronArray(
     [newMinutes, newHours, newMonthDays, newMonths, newWeekDays],

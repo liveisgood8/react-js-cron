@@ -1,6 +1,6 @@
-import { DefaultLocale } from './types'
+import { Locale } from './types'
 
-export const DEFAULT_LOCALE_EN: DefaultLocale = {
+export const DEFAULT_LOCALE_EN: Locale = {
   everyText: 'every',
   emptyMonths: 'every month',
   emptyMonthDays: 'every day of the month',
@@ -38,6 +38,16 @@ export const DEFAULT_LOCALE_EN: DefaultLocale = {
     'Friday',
     'Saturday',
   ],
+  weekDaysAlt: [
+    // Order is important, the index will be used as value
+    'SUN', // Sunday must always be first, it's "0"
+    'MON',
+    'TUE',
+    'WED',
+    'THU',
+    'FRI',
+    'SAY',
+  ],
   months: [
     // Order is important, the index will be used as value
     'January',
@@ -52,5 +62,20 @@ export const DEFAULT_LOCALE_EN: DefaultLocale = {
     'October',
     'November',
     'December',
+  ],
+  monthsAlt: [
+    // Order is important, the index will be used as value
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC123',
   ],
 }

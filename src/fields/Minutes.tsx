@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { Fragment, useMemo } from 'react'
 
 import CustomSelect from '../components/CustomSelect'
 import { MinutesProps } from '../types'
@@ -8,6 +8,7 @@ import { UNITS } from '../constants'
 
 export default function Minutes(props: MinutesProps) {
   const {
+    disablePrefixAndSuffix,
     value,
     setValue,
     locale,
@@ -31,18 +32,22 @@ export default function Minutes(props: MinutesProps) {
 
   return (
     <div className={internalClassName}>
-      {period === 'hour'
-        ? locale.prefixMinutesForHourPeriod !== '' && (
-            <span>
-              {locale.prefixMinutesForHourPeriod ||
-                DEFAULT_LOCALE_EN.prefixMinutesForHourPeriod}
-            </span>
-          )
-        : locale.prefixMinutes !== '' && (
-            <span>
-              {locale.prefixMinutes || DEFAULT_LOCALE_EN.prefixMinutes}
-            </span>
-          )}
+      {!disablePrefixAndSuffix && (
+        <Fragment>
+          {period === 'hour'
+            ? locale.prefixMinutesForHourPeriod !== '' && (
+                <span>
+                  {locale.prefixMinutesForHourPeriod ||
+                    DEFAULT_LOCALE_EN.prefixMinutesForHourPeriod}
+                </span>
+              )
+            : locale.prefixMinutes !== '' && (
+                <span>
+                  {locale.prefixMinutes || DEFAULT_LOCALE_EN.prefixMinutes}
+                </span>
+              )}
+        </Fragment>
+      )}
 
       <CustomSelect
         placeholder={
@@ -63,12 +68,14 @@ export default function Minutes(props: MinutesProps) {
         period={period}
       />
 
-      {period === 'hour' && locale.suffixMinutesForHourPeriod !== '' && (
-        <span>
-          {locale.suffixMinutesForHourPeriod ||
-            DEFAULT_LOCALE_EN.suffixMinutesForHourPeriod}
-        </span>
-      )}
+      {!disablePrefixAndSuffix &&
+        period === 'hour' &&
+        locale.suffixMinutesForHourPeriod !== '' && (
+          <span>
+            {locale.suffixMinutesForHourPeriod ||
+              DEFAULT_LOCALE_EN.suffixMinutesForHourPeriod}
+          </span>
+        )}
     </div>
   )
 }

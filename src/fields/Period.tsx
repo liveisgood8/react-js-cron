@@ -95,10 +95,6 @@ export default function Period(props: PeriodProps) {
 
   return (
     <div className={internalClassName}>
-      {locale.prefixPeriod !== '' && (
-        <span>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</span>
-      )}
-
       <Select
         key={JSON.stringify(locale)}
         defaultValue={value}

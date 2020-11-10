@@ -156,7 +156,9 @@ export interface Locale {
   errorInvalidCron?: string
   clearButtonText?: string
   weekDays?: string[]
+  weekDaysAlt?: string[]
   months?: string[]
+  monthsAlt?: string[]
 }
 export type SetValueFunction = (value: string) => void
 export type SetValue = SetValueFunction | Dispatch<SetStateAction<string>>
@@ -236,6 +238,7 @@ export interface HoursProps extends FieldProps {
   clockFormat?: ClockFormat
 }
 export interface MinutesProps extends FieldProps {
+  disablePrefixAndSuffix?: boolean
   leadingZero: LeadingZero
   clockFormat?: ClockFormat
 }
@@ -276,37 +279,6 @@ export type SetValueNumbersOrUndefined = Dispatch<
 >
 export type SetValuePeriod = Dispatch<SetStateAction<PeriodType>>
 export type SetInternalError = Dispatch<SetStateAction<boolean>>
-export interface DefaultLocale {
-  everyText: string
-  emptyMonths: string
-  emptyMonthDays: string
-  emptyMonthDaysShort: string
-  emptyWeekDays: string
-  emptyWeekDaysShort: string
-  emptyHours: string
-  emptyMinutes: string
-  emptyMinutesForHourPeriod: string
-  yearOption: string
-  monthOption: string
-  weekOption: string
-  dayOption: string
-  hourOption: string
-  minuteOption: string
-  rebootOption: string
-  prefixPeriod: string
-  prefixMonths: string
-  prefixMonthDays: string
-  prefixWeekDays: string
-  prefixWeekDaysForMonthAndYearPeriod: string
-  prefixHours: string
-  prefixMinutes: string
-  prefixMinutesForHourPeriod: string
-  suffixMinutesForHourPeriod: string
-  errorInvalidCron: string
-  clearButtonText: string
-  weekDays: string[]
-  months: string[]
-}
 export type CronValues = { [key in CronType]: number[] | string | undefined }
 export interface Classes {
   [key: string]: boolean

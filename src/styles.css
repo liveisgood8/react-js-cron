@@ -3,6 +3,10 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+.react-js-cron .react-js-cron__every {
+  align-self: center;
+  margin-bottom: 10px;
+}
 .react-js-cron > div,
 .react-js-cron-field {
   display: flex;

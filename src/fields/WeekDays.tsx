@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 
-import { WeekDaysProps } from '../types'
+import { Unit, WeekDaysProps } from '../types'
 import CustomSelect from '../components/CustomSelect'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
@@ -57,6 +57,11 @@ export default function WeekDays(props: WeekDaysProps) {
     (monthDays && monthDays.length > 0) ||
     ((!monthDays || monthDays.length === 0) && (!value || value.length === 0))
 
+  const units = {
+    ...UNITS[4],
+    alt: locale.weekDaysAlt || UNITS[4].alt,
+  } as Unit
+
   return displayWeekDays ? (
     <div className={internalClassName}>
       {locale.prefixWeekDays !== '' &&
@@ -80,7 +85,7 @@ export default function WeekDays(props: WeekDaysProps) {
         optionsList={optionsList}
         grid={false}
         value={value}
-        unit={UNITS[4]}
+        unit={units}
         setValue={setValue}
         locale={locale}
         className={className}

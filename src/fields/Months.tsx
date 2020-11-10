@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 
-import { MonthsProps } from '../types'
+import { MonthsProps, Unit } from '../types'
 import CustomSelect from '../components/CustomSelect'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
@@ -30,6 +30,11 @@ export default function Months(props: MonthsProps) {
     [className]
   )
 
+  const units = {
+    ...UNITS[3],
+    alt: locale.monthsAlt || UNITS[3].alt,
+  } as Unit
+
   return (
     <div className={internalClassName}>
       {locale.prefixMonths !== '' && (
@@ -41,7 +46,7 @@ export default function Months(props: MonthsProps) {
         optionsList={optionsList}
         grid={false}
         value={value}
-        unit={UNITS[3]}
+        unit={units}
         setValue={setValue}
         locale={locale}
         className={className}
