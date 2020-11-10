@@ -76,6 +76,6 @@ export const DEFAULT_LOCALE_EN: Locale = {
     'SEP',
     'OCT',
     'NOV',
-    'DEC123',
+    'DEC',
   ],
 }
