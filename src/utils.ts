@@ -60,7 +60,8 @@ export function setError(onError: OnError, locale: Locale) {
     onError({
       type: 'invalid_cron',
       description:
-        locale.errorInvalidCron || DEFAULT_LOCALE_EN.errorInvalidCron,
+        locale.errorInvalidCron ||
+        (DEFAULT_LOCALE_EN.errorInvalidCron as string),
     })
 }
 
