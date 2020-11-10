@@ -28,7 +28,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
-    "build": "del dist && yarn build:babel && yarn build:types",
+    "build": "del dist && npm run build:babel && npm run build:types",
     "build:babel": "concurrently \"yarn build:babel:esm\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "BABEL_ENV=cjs babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/cjs --presets=@babel/env",
     "build:babel:esm": "BABEL_ENV=esm babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/esm",
@@ -36,7 +36,8 @@
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "lint": "eslint 'src/**/*.ts?(x)'",
-    "prettier": "prettier --write 'src/**/*.{ts?(x),css}'"
+    "prettier": "prettier --write 'src/**/*.{ts?(x),css}'",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "antd": ">=4.6.0",
