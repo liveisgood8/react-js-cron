@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { Fragment, useCallback, useMemo } from 'react'
 import { Select } from 'antd'
 
 import { PeriodProps } from '../types'
@@ -95,6 +95,19 @@ export default function Period(props: PeriodProps) {
 
   return (
     <div className={internalClassName}>
+      {locale.prefixPeriod !== '' && (
+        <Fragment>
+          {value === 'minute' ? (
+            <span>
+              {locale.prefixMinutesPeriod ||
+                DEFAULT_LOCALE_EN.prefixMinutesPeriod}
+            </span>
+          ) : (
+            <span>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</span>
+          )}
+        </Fragment>
+      )}
+
       <Select
         key={JSON.stringify(locale)}
         defaultValue={value}

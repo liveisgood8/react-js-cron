@@ -265,27 +265,6 @@ export default function Cron(props: CronProps) {
 
   return (
     <div className={internalClassName}>
-      <div className={'react-js-cron__every'}>
-        {locale.prefixPeriod !== '' && (
-          <span>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</span>
-        )}
-      </div>
-
-      {periodForRender === 'minute' && (
-        <Minutes
-          disablePrefixAndSuffix={true}
-          value={minutes}
-          setValue={setMinutes}
-          locale={locale}
-          period={`hour`}
-          className={className}
-          disabled={disabled}
-          readOnly={readOnly}
-          leadingZero={leadingZero}
-          clockFormat={clockFormat}
-        />
-      )}
-
       <Period
         value={periodForRender}
         setValue={setPeriod}

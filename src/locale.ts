@@ -17,6 +17,7 @@ export const DEFAULT_LOCALE_EN: Locale = {
   hourOption: 'hour',
   minuteOption: 'minute',
   rebootOption: 'reboot',
+  prefixMinutesPeriod: 'Every',
   prefixPeriod: 'Every',
   prefixMonths: 'in',
   prefixMonthDays: 'on',

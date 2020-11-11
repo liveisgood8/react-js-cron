@@ -144,6 +144,7 @@ export interface Locale {
   hourOption?: string
   minuteOption?: string
   rebootOption?: string
+  prefixMinutesPeriod?: string
   prefixPeriod?: string
   prefixMonths?: string
   prefixMonthDays?: string
