@@ -279,7 +279,10 @@ function parseCronString(str: string) {
     throw new Error('Invalid cron string')
   }
 
-  const parts = str.replace(/\s+/g, ' ').trim().split(' ')
+  let parts = str.replace(/\s+/g, ' ').trim().split(' ')
+  if (parts.length === 6) {
+    parts = parts.slice(1) // remove seconds
+  }
 
   if (parts.length === 5) {
     return parts.map((partStr, idx) => {
