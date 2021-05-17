@@ -1,5 +1,21 @@
 ## Changelog
 
+#### 1.2.1
+
+- Fix issue [#6](https://github.com/xrutayisire/react-js-cron/issues/6): "Display problem for Selects with antd 4.10.0"
+- Fix placeholder color that should not be gray but black as the value
+
+#### 1.2.0
+
+- **(New feature)** Issue [#3](https://github.com/xrutayisire/react-js-cron/issues/3): "Add the possibility to translate alternative labels"
+- Fix typo in README
+
+#### 1.1.1
+
+- Fix issue [#2](https://github.com/xrutayisire/react-js-cron/issues/2): "antd Select cannot work when using Cron component"
+- Add dependencies version in README
+- Add link in README to story for clear button action management
+
 #### 1.1.0
 
 - **(Breaking change!)** Drop support of antd version anterior to 4.6.0 due to

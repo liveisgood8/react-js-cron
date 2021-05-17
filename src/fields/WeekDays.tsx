@@ -57,11 +57,6 @@ export default function WeekDays(props: WeekDaysProps) {
     (monthDays && monthDays.length > 0) ||
     ((!monthDays || monthDays.length === 0) && (!value || value.length === 0))
 
-  const units = {
-    ...UNITS[4],
-    alt: locale.weekDaysAlt || UNITS[4].alt,
-  } as Unit
-
   return displayWeekDays ? (
     <div className={internalClassName}>
       {locale.prefixWeekDays !== '' &&
@@ -85,7 +80,12 @@ export default function WeekDays(props: WeekDaysProps) {
         optionsList={optionsList}
         grid={false}
         value={value}
-        unit={units}
+        unit={{
+          ...UNITS[4],
+          // Allow translation of alternative labels when using "humanizeLabels"
+          // Issue #3
+          alt: locale.altWeekDays || DEFAULT_LOCALE_EN.altWeekDays,
+        }}
         setValue={setValue}
         locale={locale}
         className={className}

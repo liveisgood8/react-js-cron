@@ -39,16 +39,6 @@ export const DEFAULT_LOCALE_EN: Locale = {
     'Friday',
     'Saturday',
   ],
-  weekDaysAlt: [
-    // Order is important, the index will be used as value
-    'SUN', // Sunday must always be first, it's "0"
-    'MON',
-    'TUE',
-    'WED',
-    'THU',
-    'FRI',
-    'SAY',
-  ],
   months: [
     // Order is important, the index will be used as value
     'January',
@@ -64,8 +54,18 @@ export const DEFAULT_LOCALE_EN: Locale = {
     'November',
     'December',
   ],
-  monthsAlt: [
-    // Order is important, the index will be used as value
+  // Order is important, the index will be used as value
+  altWeekDays: [
+    'SUN', // Sunday must always be first, it's "0"
+    'MON',
+    'TUE',
+    'WED',
+    'THU',
+    'FRI',
+    'SAT',
+  ],
+  // Order is important, the index will be used as value
+  altMonths: [
     'JAN',
     'FEB',
     'MAR',
